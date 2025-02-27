@@ -76,6 +76,7 @@ int32_t main(){
     reverse(a,a+n);
    
     cout<<"input size = "<<n<<nl;
+
     
     double start_t3 = double(clock())/CLOCKS_PER_SEC;
     ORIGINAL_algorithm(a, n);
