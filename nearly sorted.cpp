@@ -29,7 +29,7 @@ void array_shuffle(int a[], int n){
 }
 
 
-const int n = 100000000;
+const int n = 500000000;
 int a[n];
 
 void array_generator(){
