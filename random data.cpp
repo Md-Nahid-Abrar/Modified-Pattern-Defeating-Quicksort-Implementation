@@ -16,7 +16,7 @@ using namespace ska;
 #define all(x) x.begin(), x.end()
 
 void fast_io(){
-	ios_base::sync_with_stdio(0);
+    ios_base::sync_with_stdio(0);
     cin.tie(0); //cout.tie(0);
     #ifndef ONLINE_JUDGE 
     freopen("INPUT.txt", "r", stdin); 
@@ -28,7 +28,7 @@ void array_shuffle(int a[], int n){
     shuffle(a, a+n, default_random_engine(0));
 }
 
-const int n = 100000000;
+const int n = 500000000;
 int a[n];
 
 void array_generator(){
