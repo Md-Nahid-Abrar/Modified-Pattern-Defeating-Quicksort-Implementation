@@ -16,7 +16,7 @@ using namespace ska;
 #define all(x) x.begin(), x.end()
 
 void fast_io(){
-	ios_base::sync_with_stdio(0);
+    ios_base::sync_with_stdio(0);
     cin.tie(0); //cout.tie(0);
     #ifndef ONLINE_JUDGE 
     freopen("INPUT.txt", "r", stdin); 
@@ -29,7 +29,7 @@ void array_shuffle(int a[], int n){
 }
 
 
-const int n = 400000000;
+const int n = 100000000;
 int a[n];
 
 void array_generator(){
@@ -72,13 +72,11 @@ void MODIFIED_algorithm(int a[], int size){
 }	
 
 int32_t main(){
-	
-	array_generator();
-	sort(a,a+n);
-	shuffle(a+(n/3), a+n-(n/3), default_random_engine(0));
+    array_generator();
+    sort(a,a+(n/3));
+    sort(a+(n/3), a+n-(n/3), greater<int>());
 	
     cout<<"input size = "<<n<<nl;
-    
     
     double start_t3 = double(clock())/CLOCKS_PER_SEC;
     ORIGINAL_algorithm(a, n);
@@ -86,8 +84,13 @@ int32_t main(){
     cout<<"original = "<<(end_t4 - start_t3)<<" s\n";
     
  
-    shuffle(a+(n/3), a+n-(n/3), default_random_engine(0));
+ 
+    shuffle(a, a+n, default_random_engine(0));
+
+	
     
+    sort(a,a+(n/3));
+    sort(a+(n/3), a+n-(n/3), greater<int>());
     
     double start_t1 = double(clock())/CLOCKS_PER_SEC;
     MODIFIED_algorithm(a, n);
@@ -96,7 +99,7 @@ int32_t main(){
 
     
     cout<<(end_t4 - start_t3)/(end_t2 - start_t1)<<" times faster\n";
-	cout<<"\nOVERALL RUNTIME = "<<(double(clock())/CLOCKS_PER_SEC)<<" ms";
+    cout<<"\nOVERALL RUNTIME = "<<(double(clock())/CLOCKS_PER_SEC)<<" ms";
 
 	
 }
