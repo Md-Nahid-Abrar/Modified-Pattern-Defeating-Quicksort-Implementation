@@ -70,8 +70,7 @@ void MODIFIED_algorithm(int a[], int size){
 
 int32_t main(){
 	
-	array_generator();
-	
+    array_generator();
     cout<<"input size = "<<n<<nl<<nl;
     
     
@@ -79,9 +78,11 @@ int32_t main(){
     ORIGINAL_algorithm(a, n);
     double end_t4 = double(clock())/CLOCKS_PER_SEC;
     cout<<"original = "<<(end_t4 - start_t3)<<" s\n";
-    
+
+	
     array_shuffle(a, n);
-    
+
+	
     double start_t1 = double(clock())/CLOCKS_PER_SEC;
     MODIFIED_algorithm(a, n);
     double end_t2 = double(clock())/CLOCKS_PER_SEC;
@@ -89,7 +90,7 @@ int32_t main(){
 
     
     cout<<(end_t4 - start_t3)/(end_t2 - start_t1)<<" times faster\n";
-	cout<<"\nOVERALL RUNTIME = "<<(double(clock())/CLOCKS_PER_SEC)<<" ms";
+    cout<<"\nOVERALL RUNTIME = "<<(double(clock())/CLOCKS_PER_SEC)<<" ms";
 	
 }
 
