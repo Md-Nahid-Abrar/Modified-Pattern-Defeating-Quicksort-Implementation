@@ -84,11 +84,9 @@ int32_t main(){
     cout<<"original = "<<(end_t4 - start_t3)<<" s\n";
     
  
- 
     shuffle(a, a+n, default_random_engine(0));
 
 	
-    
     sort(a,a+(n/3));
     sort(a+(n/3), a+n-(n/3), greater<int>());
     
